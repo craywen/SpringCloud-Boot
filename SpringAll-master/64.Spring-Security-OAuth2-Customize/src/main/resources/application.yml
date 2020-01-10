@@ -1,0 +1,10 @@
+security:
+  oauth2:
+    client:
+      client-id: test
+      client-secret: test1234
+spring:
+  redis:
+    host: 192.168.1.40
+    port: 6379
+

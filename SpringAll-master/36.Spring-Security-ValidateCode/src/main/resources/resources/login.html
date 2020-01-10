@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/login.css" type="text/css">
+    <script src="js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<form class="login-page" action="/login" method="post">
+    <div class="form">
+        <h3>账户登录</h3>
+        <input type="text" placeholder="用户名" name="username" required="required"/>
+        <input type="password" placeholder="密码" name="password" required="required"/>
+        <span style="display: inline">
+            <input type="text" name="imageCode" placeholder="验证码" style="width: 50%;"/>
+            <img  id="img"   onclick="change()"src="/code/image"/>
+
+        </span>
+        <button type="submit">登录</button>
+    </div>
+</form>
+</body>
+<script type="text/javascript" >
+    function  changed() {
+        $.get("/code/image",function(data,status){
+        });
+    }
+
+    function  change() {
+       // document.getElementById("verificationCodeImg").src = this.codeUrl + "?"+Math.random();
+        document.getElementById("img").src="http://localhost:8080/code/image/"+ "?"+Math.random();
+    }
+    
+</script>
+</html>
